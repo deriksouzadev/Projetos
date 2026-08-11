@@ -25,6 +25,15 @@ public class Main {
 
         funcionarios.add(funcionario);
 
+        Funcionario funcionario2 = new Funcionario();
+
+        funcionario2.nome = "Maria";
+        funcionario2.cpf = "98765432100";
+        funcionario2.cargo = "Analista de DP";
+        funcionario2.salario = 4500;
+
+        funcionarios.add(funcionario2);
+
 
         Scanner entrada = new Scanner(System.in);
 
@@ -58,16 +67,16 @@ public class Main {
                     System.out.println("Salário: " + funcionarios.get(i).salario);
 
                 }
+            }
+
 
             if (!encontrado) {
                 System.out.println("Funcionário não encontrado.");
             }
 
-        }
-
         } else if (opcao == 3) {
             System.out.println("Voltando...");
-        }else {
+        } else {
             System.out.println("Opção inválida.");
         }
     }
