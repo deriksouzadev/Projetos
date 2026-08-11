@@ -42,37 +42,14 @@ public class Main {
 
         if (opcao == 1) {
             System.out.println("Listando funcionários.");
+            consultarFuncionario(funcionarios);
 
-            for (int i = 0; i < funcionarios.size(); i++) {
-                System.out.println("Nome: " + funcionarios.get(i).nome);
-                System.out.println("CPF: " + funcionarios.get(i).cpf);
-                System.out.println("Cargo: " + funcionarios.get(i).cargo);
-                System.out.println("Salário: " + funcionarios.get(i).salario);
-            }
+
         } else if (opcao == 2) {
             System.out.print("Digite o CPF do funcionário: ");
             String cpfBusca = entrada.next();
 
-            boolean encontrado = false;
-
-            for (int i = 0; i < funcionarios.size(); i++) {
-                if (funcionarios.get(i).cpf.equals(cpfBusca)) {
-
-                    encontrado = true;
-
-                    System.out.println("Funcionário encontrado!");
-                    System.out.println("Nome: " + funcionarios.get(i).nome);
-                    System.out.println("CPF: " + funcionarios.get(i).cpf);
-                    System.out.println("Cargo: " + funcionarios.get(i).cargo);
-                    System.out.println("Salário: " + funcionarios.get(i).salario);
-
-                }
-            }
-
-
-            if (!encontrado) {
-                System.out.println("Funcionário não encontrado.");
-            }
+            buscarFuncionario(funcionarios,cpfBusca);
 
         } else if (opcao == 3) {
             System.out.println("Voltando...");
@@ -80,7 +57,42 @@ public class Main {
             System.out.println("Opção inválida.");
         }
     }
+
+
+    static void consultarFuncionario(ArrayList<Funcionario> funcionarios) {
+        for (int i = 0; i < funcionarios.size(); i++) {
+            System.out.println("Nome: " + funcionarios.get(i).nome);
+            System.out.println("CPF: " + funcionarios.get(i).cpf);
+            System.out.println("Cargo: " + funcionarios.get(i).cargo);
+            System.out.println("Salário: " + funcionarios.get(i).salario);
+        }
+    }
+    static void buscarFuncionario(ArrayList<Funcionario> funcionarios, String cpfBusca) {
+
+        boolean encontrado = false;
+
+        for (int i = 0; i < funcionarios.size(); i++) {
+
+            if (funcionarios.get(i).cpf.equals(cpfBusca)) {
+
+                encontrado=true;
+                System.out.println("Funcionário encontrado!");
+                System.out.println("Nome: " + funcionarios.get(i).nome);
+                System.out.println("CPF: " + funcionarios.get(i).cpf);
+                System.out.println("Cargo: " + funcionarios.get(i).cargo);
+                System.out.println("Salário: " + funcionarios.get(i).salario);
+
+                }
+            }
+
+            if (!encontrado) {
+            System.out.println("Funcionário não encontrado.");
+        }
+
+
+    }
 }
+
     class Funcionario {
 
         String nome;
@@ -88,5 +100,4 @@ public class Main {
         String cargo;
         double salario;
     }
-
 
