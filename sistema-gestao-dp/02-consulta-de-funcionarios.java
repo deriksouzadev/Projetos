@@ -15,11 +15,16 @@ public class Main {
         System.out.println("2 - Buscar funcionário");
         System.out.println("3 - Voltar");
 
-        ArrayList<String> funcionarios = new ArrayList<>();
+        ArrayList<Funcionario> funcionarios = new ArrayList<>();
+        Funcionario funcionario = new Funcionario();
 
-        funcionarios.add("Pedro");
-        funcionarios.add("Maria");
-        funcionarios.add("Lucas");
+        funcionario.nome = "Pedro";
+        funcionario.cpf = "12345678900";
+        funcionario.cargo = "Auxiliar Administrativo";
+        funcionario.salario = 3000;
+
+        funcionarios.add(funcionario);
+
 
         Scanner entrada = new Scanner(System.in);
 
@@ -29,7 +34,10 @@ public class Main {
         if (opcao == 1) {
             System.out.println("Listando funcionários.");
             for (int i = 0; i < funcionarios.size(); i++) {
-                System.out.println(funcionarios.get(i));
+                System.out.println("Nome: " + funcionarios.get(i).nome);
+                System.out.println("CPF: " + funcionarios.get(i).cpf);
+                System.out.println("Cargo: " + funcionarios.get(i).cargo);
+                System.out.println("Salário: " + funcionarios.get(i).salario);
             }
         } else if (opcao == 2) {
             System.out.println("Buscando funcionários.");
@@ -40,4 +48,13 @@ public class Main {
         }
     }
 }
+    class Funcionario {
+
+        String nome;
+        String cpf;
+        String cargo;
+        double salario;
+    }
+
+
 
