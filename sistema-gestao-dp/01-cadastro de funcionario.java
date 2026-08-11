@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Main {
 
@@ -40,17 +41,37 @@ public class Main {
             System.out.println("Erro: o salário não pode ser negativo.");
         }
 
-        while (salario<0){
+        while (salario < 0) {
             System.out.print("Digite o salario novamente: ");
             salario = entrada.nextDouble();
         }
-        
-        System.out.println("\n--- Funcionário cadastrado ---");
-        System.out.println("Nome: " + nome);
-        System.out.println("CPF: " + cpf);
-        System.out.println("Cargo: " + cargo);
-        System.out.println("Salário: R$ " + salario);
 
-        entrada.close();
-    }
-}
+            Funcionario funcionario = new Funcionario();
+
+            funcionario.nome = nome;
+            funcionario.cpf = cpf;
+            funcionario.cargo = cargo;
+            funcionario.salario = salario;
+
+            ArrayList<Funcionario> funcionarios = new ArrayList<>();
+
+            funcionarios.add(funcionario);
+
+            for (int i = 0; i < funcionarios.size(); i++) {
+
+                System.out.println("Nome: " + funcionarios.get(i).nome);
+                System.out.println("CPF: " + funcionarios.get(i).cpf);
+                System.out.println("Cargo: " + funcionarios.get(i).cargo);
+                System.out.println("Salário: " + funcionarios.get(i).salario);
+            }
+        }
+        }
+
+        class Funcionario {
+
+            String nome;
+            String cpf;
+            String cargo;
+            double salario;
+
+        }
