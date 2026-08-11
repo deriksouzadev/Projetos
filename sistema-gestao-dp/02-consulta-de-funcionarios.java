@@ -33,6 +33,7 @@ public class Main {
 
         if (opcao == 1) {
             System.out.println("Listando funcionários.");
+
             for (int i = 0; i < funcionarios.size(); i++) {
                 System.out.println("Nome: " + funcionarios.get(i).nome);
                 System.out.println("CPF: " + funcionarios.get(i).cpf);
@@ -40,7 +41,30 @@ public class Main {
                 System.out.println("Salário: " + funcionarios.get(i).salario);
             }
         } else if (opcao == 2) {
-            System.out.println("Buscando funcionários.");
+            System.out.print("Digite o CPF do funcionário: ");
+            String cpfBusca = entrada.next();
+
+            boolean encontrado = false;
+
+            for (int i = 0; i < funcionarios.size(); i++) {
+                if (funcionarios.get(i).cpf.equals(cpfBusca)) {
+
+                    encontrado = true;
+
+                    System.out.println("Funcionário encontrado!");
+                    System.out.println("Nome: " + funcionarios.get(i).nome);
+                    System.out.println("CPF: " + funcionarios.get(i).cpf);
+                    System.out.println("Cargo: " + funcionarios.get(i).cargo);
+                    System.out.println("Salário: " + funcionarios.get(i).salario);
+
+                }
+
+            if (!encontrado) {
+                System.out.println("Funcionário não encontrado.");
+            }
+
+        }
+
         } else if (opcao == 3) {
             System.out.println("Voltando...");
         }else {
@@ -55,6 +79,5 @@ public class Main {
         String cargo;
         double salario;
     }
-
 
 
