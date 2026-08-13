@@ -1,0 +1,423 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    margin: 0;
+    padding: 40px 20px;
+}
+
+#app {
+    max-width: 430px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+h1 {
+    color: #2563eb;
+    margin-bottom: 5px;
+}
+
+#app > p:first-of-type {
+    color: #64748b;
+    margin-top: 0;
+}
+
+/* PORQUINHO */
+
+#porquinho {
+    font-size: 70px;
+    margin: 15px 0;
+}
+
+#porquinho.comemorando {
+    animation: comemorar 0.6s ease;
+}
+
+@keyframes comemorar {
+
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+
+    25% {
+        transform: scale(1.2) rotate(-8deg);
+    }
+
+    50% {
+        transform: scale(1.25) rotate(8deg);
+    }
+
+    75% {
+        transform: scale(1.2) rotate(-8deg);
+    }
+
+    100% {
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+/* LEVEL UP */
+
+.mensagemNivel {
+    display: none;
+    background: linear-gradient(135deg, #f59e0b, #f97316);
+    color: white;
+    padding: 18px;
+    border-radius: 16px;
+    margin: 20px 0;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.mensagemNivel span {
+    display: block;
+    font-size: 14px;
+    margin-top: 6px;
+}
+
+.mensagemNivel.mostrar {
+    display: block;
+}
+
+/* STATUS */
+
+#status {
+    display: flex;
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.statusCard {
+    flex: 1;
+    background-color: #f4f6f8;
+    padding: 15px;
+    border-radius: 16px;
+}
+
+.statusCard span {
+    display: block;
+    color: #64748b;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.statusCard strong {
+    font-size: 24px;
+}
+
+/* XP */
+
+#nivelXp {
+    margin-top: 20px;
+}
+
+#xpTexto {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+#xpTexto span {
+    color: #64748b;
+}
+
+#fundoXp {
+    width: 100%;
+    height: 18px;
+    background-color: #e5e7eb;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+#barraXp {
+    width: 0%;
+    height: 100%;
+    background-color: #f59e0b;
+    transition: width 0.4s ease;
+}
+
+#proximoNivel {
+    color: #64748b;
+    font-size: 12px;
+}
+
+/* DINHEIRO */
+
+#dinheiro {
+    margin-top: 25px;
+}
+
+#dinheiro p {
+    color: #64748b;
+    margin-bottom: 5px;
+}
+
+#valorPoupado {
+    font-size: 30px;
+    color: #16a34a;
+}
+
+#valorInput,
+#categoriaInput,
+#metaInput {
+    width: 80%;
+    padding: 12px;
+    margin-top: 15px;
+    border: 2px solid #e5e7eb;
+    border-radius: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+/* BOTÕES */
+
+.botoesFinanceiros {
+    display: flex;
+    gap: 10px;
+    width: 80%;
+    margin: 10px auto;
+}
+
+#botaoPoupar,
+#botaoGastei,
+#botaoMeta {
+    border: none;
+    border-radius: 10px;
+    padding: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#botaoPoupar,
+#botaoGastei {
+    flex: 1;
+    color: white;
+}
+
+#botaoPoupar {
+    background-color: #16a34a;
+}
+
+#botaoGastei {
+    background-color: #dc2626;
+}
+
+#botaoMeta {
+    display: block;
+    margin: 10px auto;
+    background-color: #2563eb;
+    color: white;
+    padding: 12px 20px;
+}
+
+/* ANIMAÇÃO XP */
+
+#animacaoXP {
+    position: relative;
+    height: 0;
+    pointer-events: none;
+}
+
+.xpFlutuante {
+    position: absolute;
+    left: 50%;
+    top: -10px;
+    color: #f59e0b;
+    font-size: 24px;
+    font-weight: bold;
+    animation: subirXP 1.2s ease-out forwards;
+}
+
+@keyframes subirXP {
+
+    0% {
+        opacity: 0;
+        transform: translate(-50%, 0);
+    }
+
+    20% {
+        opacity: 1;
+        transform: translate(-50%, -10px);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -70px);
+    }
+}
+
+/* META */
+
+#meta,
+#conquistas,
+#resumo,
+#historico,
+#configuracoes {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e5e7eb;
+}
+
+#progressoMeta {
+    width: 100%;
+    height: 18px;
+    background-color: #e5e7eb;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+#barraMeta {
+    width: 0%;
+    height: 100%;
+    background-color: #2563eb;
+    transition: width 0.4s ease;
+}
+
+#porcentagemMeta {
+    color: #2563eb;
+    font-weight: bold;
+}
+
+/* CONQUISTAS */
+
+#conquistas {
+    text-align: left;
+}
+
+.conquista {
+    background-color: #f4f6f8;
+    padding: 15px;
+    border-radius: 14px;
+    margin-top: 10px;
+    color: #94a3b8;
+}
+
+.conquista strong,
+.conquista span {
+    display: block;
+}
+
+.conquista span {
+    margin-top: 5px;
+    font-size: 13px;
+}
+
+.conquista.desbloqueada {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+/* DASHBOARD */
+
+#resumo {
+    text-align: left;
+}
+
+.dashboardCards {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.dashboardCard {
+    flex: 1;
+    background-color: #f8fafc;
+    padding: 14px 8px;
+    border-radius: 14px;
+    border: 1px solid #e5e7eb;
+    text-align: center;
+}
+
+.dashboardCard span {
+    display: block;
+    font-size: 12px;
+    color: #64748b;
+    margin-bottom: 8px;
+}
+
+.dashboardCard strong {
+    display: block;
+    font-size: 16px;
+}
+
+.disponivel {
+    background-color: #ecfdf5;
+    border-color: #86efac;
+}
+
+.disponivel strong {
+    color: #16a34a;
+}
+
+/* RESUMO CATEGORIAS */
+
+.resumoCard {
+    background-color: #f8fafc;
+    padding: 14px;
+    border-radius: 12px;
+    margin-top: 10px;
+}
+
+.resumoCard strong,
+.resumoCard span {
+    display: block;
+}
+
+.resumoCard span {
+    color: #16a34a;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+/* HISTÓRICO */
+
+#historico {
+    text-align: left;
+}
+
+.movimentacao {
+    background-color: #f8fafc;
+    padding: 16px;
+    border-radius: 14px;
+    margin-top: 12px;
+    border: 1px solid #e5e7eb;
+}
+
+.movimentacao.entrada {
+    border-left: 4px solid #16a34a;
+}
+
+.movimentacao.saida {
+    border-left: 4px solid #dc2626;
+}
+
+.movimentacao strong,
+.movimentacao span {
+    display: block;
+}
+
+.movimentacao span {
+    color: #64748b;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+/* CONFIGURAÇÕES */
+
+#configuracoes h2 {
+    color: #64748b;
+    font-size: 15px;
+}
+
+#botaoResetar {
+    background-color: #f1f5f9;
+    color: #dc2626;
+    border: 1px solid #fecaca;
+    padding: 10px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+}
