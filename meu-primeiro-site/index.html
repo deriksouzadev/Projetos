@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Poupei Mimei 🐷</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="app">
+
+        <h1>Poupei Mimei 🐷</h1>
+
+        <p>Seu dinheiro. Seu jogo.</p>
+
+        <!-- PORQUINHO -->
+
+        <div id="porquinho">🐷</div>
+
+        <!-- MENSAGEM DE LEVEL UP -->
+
+        <div id="mensagemNivel" class="mensagemNivel">
+            🎉 NÍVEL UP! 🎉
+            <span id="textoNivelUp"></span>
+        </div>
+
+        <!-- STATUS -->
+
+        <div id="status">
+
+            <div class="statusCard">
+                <span>⭐ XP</span>
+                <strong id="xpStatus">0</strong>
+            </div>
+
+            <div class="statusCard">
+                <span>🏆 Nível</span>
+                <strong id="nivel">1</strong>
+            </div>
+
+        </div>
+
+        <!-- XP -->
+
+        <div id="nivelXp">
+
+            <div id="xpTexto">
+
+                <span>⭐ XP</span>
+
+                <strong>
+                    <span id="xp">0</span> / 100
+                </strong>
+
+            </div>
+
+            <div id="fundoXp">
+                <div id="barraXp"></div>
+            </div>
+
+            <p id="proximoNivel">
+                Faltam 100 XP para o próximo nível
+            </p>
+
+        </div>
+
+        <!-- DINHEIRO -->
+
+        <div id="dinheiro">
+
+            <p>💰 Total acumulado</p>
+
+            <strong>
+                R$ <span id="valorPoupado">0,00</span>
+            </strong>
+
+            <input
+                type="number"
+                id="valorInput"
+                placeholder="Digite um valor"
+                min="0"
+                step="0.01"
+            >
+
+            <select id="categoriaInput">
+
+                <option value="Economia">
+                    💰 Economia
+                </option>
+
+                <option value="Salário">
+                    💼 Salário
+                </option>
+
+                <option value="Extra">
+                    🎁 Extra
+                </option>
+
+                <option value="Investimento">
+                    📈 Investimento
+                </option>
+
+                <option value="Outro">
+                    🐷 Outro
+                </option>
+
+            </select>
+
+            <div class="botoesFinanceiros">
+
+                <button id="botaoPoupar">
+                    POUPEI! 💰
+                </button>
+
+                <button id="botaoGastei">
+                    GASTEI! 💸
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- ANIMAÇÃO XP -->
+
+        <div id="animacaoXP"></div>
+
+        <!-- META -->
+
+        <div id="meta">
+
+            <h2>🎯 Minha Meta</h2>
+
+            <input
+                type="number"
+                id="metaInput"
+                placeholder="Quanto você quer poupar?"
+                min="0"
+                step="0.01"
+            >
+
+            <button id="botaoMeta">
+                DEFINIR META 🎯
+            </button>
+
+            <div id="progressoMeta">
+                <div id="barraMeta"></div>
+            </div>
+
+            <p id="porcentagemMeta">
+                0%
+            </p>
+
+            <p id="textoMeta">
+                Defina uma meta para começar!
+            </p>
+
+        </div>
+
+        <!-- CONQUISTAS -->
+
+        <div id="conquistas">
+
+            <h2>🏆 Conquistas</h2>
+
+            <div id="listaConquistas"></div>
+
+        </div>
+
+        <!-- RESUMO -->
+
+        <div id="resumo">
+
+            <h2>📊 Meu Resumo</h2>
+
+            <div class="dashboardCards">
+
+                <div class="dashboardCard">
+                    <span>💰 Total acumulado</span>
+
+                    <strong id="dashboardTotal">
+                        R$ 0,00
+                    </strong>
+                </div>
+
+                <div class="dashboardCard">
+                    <span>💸 Total gasto</span>
+
+                    <strong id="dashboardGastos">
+                        R$ 0,00
+                    </strong>
+                </div>
+
+                <div class="dashboardCard disponivel">
+                    <span>💵 Disponível</span>
+
+                    <strong id="dashboardSaldo">
+                        R$ 0,00
+                    </strong>
+                </div>
+
+            </div>
+
+            <div class="dashboardCards">
+
+                <div class="dashboardCard">
+                    <span>🎯 Meta</span>
+
+                    <strong id="dashboardMeta">
+                        0%
+                    </strong>
+                </div>
+
+                <div class="dashboardCard">
+                    <span>⭐ Nível</span>
+
+                    <strong id="dashboardNivel">
+                        1
+                    </strong>
+                </div>
+
+            </div>
+
+            <h3>📊 Onde estou poupando?</h3>
+
+            <div id="listaResumo"></div>
+
+        </div>
+
+        <!-- HISTÓRICO -->
+
+        <div id="historico">
+
+            <h2>📜 Histórico</h2>
+
+            <div id="listaHistorico"></div>
+
+        </div>
+
+        <!-- CONFIGURAÇÕES -->
+
+        <div id="configuracoes">
+
+            <h2>⚙️ Configurações</h2>
+
+            <button id="botaoResetar">
+                🗑️ Resetar meus dados
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
